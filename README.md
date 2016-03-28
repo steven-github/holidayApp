@@ -1,7 +1,4 @@
-# holidayApp
-Holiday API + AngulaJS
-
-slushApp
+holidayApp
 ============
 
 ## Development
