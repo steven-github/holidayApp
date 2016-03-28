@@ -1,45 +1,12 @@
-holidayApp
-============
+# holiday-app
 
-## Development
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.15.1.
 
-To start developing in the project run:
+## Build & development
 
-```bash
-gulp serve
-```
+Run `grunt` for building and `grunt serve` for preview.
 
-Then head to `http://localhost:3000` in your browser.
+## Testing
 
-The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches all files for changes and lints, builds and injects them into the index.html accordingly.
-
-## Tests
-
-To run tests run:
-
-```bash
-gulp test
-```
-
-**Or** first inject all test files into `karma.conf.js` with:
-
-```bash
-gulp karma-conf
-```
-
-Then you're able to run Karma directly. Example:
-
-```bash
-karma start --single-run
-```
-
-## Production ready build - a.k.a. dist
-
-To make the app ready for deploy to production run:
-
-```bash
-gulp dist
-```
-
-Now there's a `./dist` folder with all scripts and stylesheets concatenated and minified, also third party libraries installed with bower will be concatenated and minified into `vendors.min.js` and `vendors.min.css` respectively.
-
+Running `grunt test` will run the unit tests with karma.
