@@ -35,7 +35,6 @@
 }(this || {}, function(root, daterangepicker, moment, $) { // 'this' doesn't exist on a server
 
     var DateRangePicker = function(element, options, cb) {
-        console.log('options', options);
         //default settings for options
         this.parentEl = 'body';
         this.element = $(element);
@@ -835,12 +834,16 @@
                     if (!disabled)
                         cname += 'available';
 
-                    html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '">';
-                    if (tooltip)
-                        html += '<span data-toggle="tooltip" data-placement="top" title="' + tooltip + '">';
+                    //html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '">';
+                    if (tooltip) {
+                        html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '" data-toggle="tooltip" data-placement="top" data-container=".calendar" title="' + tooltip + '">';
+                        //html += '<span data-toggle="tooltip" data-placement="top" title="' + tooltip + '">';
+                    } else {
+                        html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-title="' + 'r' + row + 'c' + col + '">';
+                    }
                     html += calendar[row][col].date();
-                    if (tooltip)
-                        html += '</span></td>';
+                    //if (tooltip)
+                        //html += '</span></td>';
 
                 }
                 html += '</tr>';
@@ -850,6 +853,7 @@
             html += '</table>';
 
             this.container.find('.calendar.' + side + ' .calendar-table').html(html);
+            this.container.find('[data-toggle="tooltip"]').tooltip();
 
         },
 
@@ -1319,7 +1323,6 @@
 
         clickDate: function(e) {
             var form = $(e.target).closest('.startdate');
-            console.log('form.length', form.length);
             if ($(e.target).hasClass('available') && form.length == 0) return;
 
             var title = $(e.target).attr('data-title');

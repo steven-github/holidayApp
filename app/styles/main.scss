@@ -1,8 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "daterangepicker";
 // endbower
+@import "daterangepicker";
 .startdate {
     position: relative;
     input {
@@ -32,6 +32,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
             }
             .in-range {
                 background: #c6dd95!important;
+                cursor: default;
             }
             .weekend {
                 background: #fefd09!important;
@@ -52,11 +53,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
             .holiday {
                 background: #f87f16!important;
                 color: #000!important;
+                cursor: pointer;
+                &:hover {
+                    background: #dc6a07!important;
+                    color: #fff!important;
+                }
             }
             .off {
                 background: #fff!important;
                 color: #eee!important;
             }
         }
+    }
+}
+
+.calendar {
+    table {
+        tr {
+            position: relative!important;
+        }
+    }
+    .tooltip {
+        position: absolute!important;
+        z-index: 100;
     }
 }
