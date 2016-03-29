@@ -30,6 +30,7 @@ angular.module('holidayAppApp')
                 }, function(start, end, label) {
                     console.log('predefined range: ', label);
                 }).trigger('click');
+                $('[data-toggle="tooltip"]').tooltip();
             }
         };
     }])
