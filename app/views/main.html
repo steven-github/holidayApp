@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-4">
         <div class="well">
-            <form ng-submit="submit()">
+            <form ng-submit="submit()" class="datepicker">
                 <div class="form-group startdate">
                     <label for="startdate" class="control-label">Start date</label>
                     <input type="text" ng-model="data.date" class="form-control" id="startdate" name="startdate" required title="Start date required" placeholder="Please select a start date - e.g 01/01/2008" autocomplete="off">
@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group">
                     <label for="days" class="control-label">Days</label>
-                    <input type="number" ng-model="data.days" class="form-control" id="days" name="days" required min="1" max="30" title="Days required" placeholder="Please enter the number of days">
+                    <input type="number" ng-model="data.days" class="form-control" id="days" name="days" required min="1" max="120" title="Days required" placeholder="Please enter the number of days">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
@@ -23,15 +23,40 @@
         </div>
     </div>
     <div class="col-xs-8">
+        <!-- <div id="daterange"></div> -->
         <div class="loading" ng-show="loading">
-            Loading...
+            <div class="text-center">
+                <img src="images/spinner.gif" alt="Loading">
+                <p>Loading</p>
+            </div>
         </div>
         <div class="loaded" ng-if="loaded">
-            <div load-calendar></div>
+            <div class="results" load-calendar>
+                <div class="daterange"></div>
+            </div>
         </div>
     </div>
 </div>
 <script>
+// $('#daterange').daterangepicker({
+//     startDate: '01/01/2008',
+//     endDate: '01/15/2008',
+//     maxDate: '02/29/2008',
+//     parentEl: "daterange",
+//     //"singleDatePicker": true,
+//     "locale": {
+//         "firstDay": 6
+//     }
+// }, function(start, end, label) {
+//     console.log('predefined range: ', label);
+// }).trigger('click');
+// $('#calendarJs').yacal({
+//     date: '2016/3/1',
+//     minDate: '2016/3/1',
+//     maxDate: '2016/3/20',
+//     nearMonths: 1,
+//     firstDay: 6,
+// });
 $('input[name="startdate"]').daterangepicker({
     singleDatePicker: true,
     startDate: "01/01/2008",

@@ -11,18 +11,35 @@ angular.module('holidayAppApp')
         return {
             restrict: 'A',
             link: function(scope, iElement, iAttrs) {
+                console.log('scope', scope.data);
                 $(iElement).daterangepicker({
-                    startDate: '01/01/2008',
-                    endDate: '01/15/2008',
-                    maxDate: '01/15/2008',
+                    startDate: scope.data.date,
+                    endDate: scope.data.additional,
+                    minDate: scope.data.date,
+                    maxDate: scope.data.additional,
                     parentEl: ".daterange",
-                    "singleDatePicker": true,
-                    "locale": {
-                        "firstDay": 6
+                    //"singleDatePicker": true,
+                    //opens: 'left',
+                    locale: {
+                        firstDay: 6
+                    },
+                    dateLimit: {
+                        //days: 30
                     }
                 }, function(start, end, label) {
                     console.log('predefined range: ', label);
                 }).trigger('click');
+            }
+        };
+    }])
+    .directive('stopPropagation', [function() {
+        return {
+            restrict: 'A',
+            link: function(scope, iElement, iAttrs) {
+                iElement.find('.daterangepicker').on("click", function(e) {
+                    //e.stopPropagation();
+                    //e.preventDefault();
+                });
             }
         };
     }]);

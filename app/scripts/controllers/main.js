@@ -10,22 +10,30 @@
 angular.module('holidayAppApp')
     .controller('MainCtrl', ['$scope', 'getHolidaysService', '$timeout', function($scope, getHolidaysService, $timeout) {
         $scope.data = {
-            date: '04/01/2008',
+            date: '01/01/2008',
             days: 10,
             country: 'US'
         };
-        $scope.loading = false;
-        $scope.loaded = false;
+
         $scope.submit = function() {
+            $scope.loading = false;
+            $scope.loaded = false;
+
             var momentjs = moment($scope.data.date, "MM/DD/YYYY");
+
             $scope.data.month = momentjs.month() + 1;
-            $scope.data.day = momentjs.day();
+            $scope.data.day = momentjs.date();
             $scope.data.year = momentjs.year();
+
+            var date = new Date(momentjs.year(), momentjs.month(), momentjs.date());
+            var formattedDate = moment(date).add($scope.data.days, 'days').format("MM/DD/YYYY");
+            $scope.data.additional = formattedDate;
+
             getHolidaysService.getHolidays($scope.data).then(function(data) {
                 $scope.loading = true;
                 try {
                     if (data && data.status == 200) {
-                        console.log('data', data);
+                        //console.log('data', data);
                         $scope.holidays = data;
                         $timeout(function() {
                             $scope.loading = false;

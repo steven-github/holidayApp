@@ -8,16 +8,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
         cursor: pointer;
     }
     i {
-        position: absolute;
-        bottom: 10px;
-        right: 24px;
-        top: auto;
-        cursor: pointer;
+        &.glyphicon-calendar {
+            position: absolute;
+            bottom: 10px;
+            right: 24px;
+            top: auto;
+            cursor: pointer;
+        }
     }
 }
 
-#daterange {
-    width: 100px;
-    height: 50px;
-    background-color: red;
+.loading {
+    p {}
+}
+
+.results {
+    .daterange {
+        position: relative;
+        .daterangepicker {
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+    }
 }
