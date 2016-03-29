@@ -18,8 +18,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     }
 }
 
-.loading {
-    p {}
+.daterangepicker {
+    .in-range {
+        background: #c6dd95!important;
+    }
+    .weekend {
+        background: #fefd09!important;
+        color: #000!important;
+    }
+    .active {
+        background: #9cbb59!important;
+    }
+    .off {
+        background: #fff!important;
+        color: #eee!important;
+    }
+    .disabled {
+        background: #cdcdcd!important;
+        color: #cdcdcd!important;
+    }
 }
 
 .results {

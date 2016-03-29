@@ -21,7 +21,7 @@ angular.module('holidayAppApp')
                     //"singleDatePicker": true,
                     //opens: 'left',
                     locale: {
-                        firstDay: 6
+                        //firstDay: 6
                     },
                     dateLimit: {
                         //days: 30
