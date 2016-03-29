@@ -18,34 +18,43 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     }
 }
 
-.daterangepicker {
-    .in-range {
-        background: #c6dd95!important;
-    }
-    .weekend {
-        background: #fefd09!important;
-        color: #000!important;
-    }
-    .active {
-        background: #9cbb59!important;
-    }
-    .off {
-        background: #fff!important;
-        color: #eee!important;
-    }
-    .disabled {
-        background: #cdcdcd!important;
-        color: #cdcdcd!important;
-    }
-}
-
 .results {
     .daterange {
         position: relative;
         .daterangepicker {
+            padding: 13px 0;
+            margin: 0;
+            box-shadow: none;
             &:before,
             &:after {
                 display: none;
+            }
+            .in-range {
+                background: #c6dd95!important;
+            }
+            .weekend {
+                background: #fefd09!important;
+                color: #000!important;
+            }
+            .active {
+                //background: #9cbb59!important;
+                background: #c6dd95 !important;
+                color: #000!important;
+            }
+            .disabled {
+                background: #cdcdcd!important;
+                color: #cdcdcd!important;
+            }
+            .end-date {
+                //border-radius: 0;
+            }
+            .holiday {
+                background: #f87f16!important;
+                color: #000!important;
+            }
+            .off {
+                background: #fff!important;
+                color: #eee!important;
             }
         }
     }

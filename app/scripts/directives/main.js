@@ -25,7 +25,8 @@ angular.module('holidayAppApp')
                     },
                     dateLimit: {
                         //days: 30
-                    }
+                    },
+                    holidays: scope.data.holidays
                 }, function(start, end, label) {
                     console.log('predefined range: ', label);
                 }).trigger('click');

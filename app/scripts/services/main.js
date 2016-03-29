@@ -23,9 +23,9 @@ angular.module('holidayAppApp')
                     params: {
                         country: data.country,
                         year: data.year,
-                        month: data.month,
-                        day: data.day,
-                        previous: true
+                        //month: data.month,
+                        //day: data.day,
+                        //previous: true
                     }
                 }).
                 success(function(data, status, headers, config) {

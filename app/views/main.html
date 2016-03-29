@@ -22,7 +22,7 @@
             </form>
         </div>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-6">
         <!-- <div id="daterange"></div> -->
         <div class="loading" ng-show="loading">
             <div class="text-center">
@@ -34,6 +34,10 @@
             <div class="results" load-calendar>
                 <div class="daterange"></div>
             </div>
+        </div>
+        <div class="error text-center" ng-if="error">
+            <p>An error loading calendar has occured, please try again</p>
+            <p>Sorry for any incovenience</p>
         </div>
     </div>
 </div>

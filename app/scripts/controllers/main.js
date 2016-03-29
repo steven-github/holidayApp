@@ -18,12 +18,13 @@ angular.module('holidayAppApp')
         $scope.submit = function() {
             $scope.loading = false;
             $scope.loaded = false;
+            $scope.error = false;
 
             var momentjs = moment($scope.data.date, "MM/DD/YYYY");
 
-            $scope.data.month = momentjs.month() + 1;
-            $scope.data.day = momentjs.date();
-            $scope.data.year = momentjs.year();
+            // $scope.data.month = momentjs.month() + 1;
+            // $scope.data.day = momentjs.date();
+            // $scope.data.year = momentjs.year();
 
             var date = new Date(momentjs.year(), momentjs.month(), momentjs.date());
             var formattedDate = moment(date).add($scope.data.days, 'days').format("MM/DD/YYYY");
@@ -41,7 +42,10 @@ angular.module('holidayAppApp')
                 try {
                     if (data && data.status == 200) {
                         console.log('data', data);
-                        $scope.holidays = data;
+                        $scope.data.holidays = data.holidays;
+                        // if (typeof(data.holidays) === 'object') {
+                        //     console.log('typeof(data.holidays)', typeof(data.holidays));
+                        // }
                         $timeout(function() {
                             $scope.loading = false;
                             $scope.loaded = true;
@@ -51,7 +55,8 @@ angular.module('holidayAppApp')
                 } catch (e) {
                     $timeout(function() {
                         $scope.loading = false;
-                        $scope.loaded = true;
+                        $scope.loaded = false;
+                        $scope.error = true;
                     }, 1500);
                 }
             });
