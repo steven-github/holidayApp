@@ -10,7 +10,6 @@
         "angular-route": "^1.4.0",
         "angular-sanitize": "^1.4.0",
         "angular-touch": "^1.4.0",
-        "bootstrap-daterangepicker": "2.1.19",
         "moment": ">=2.9.0"
     },
     "devDependencies": {
