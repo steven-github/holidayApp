@@ -1,7 +1,6 @@
 # holiday-app
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+[holidayAPI](http://holidayapi.com/) + [AngularJS](https://angularjs.org/) version 0.0.1. - This web app generates a calendar with all holidays between selected date ranges.
 
 ## Build & development
 
