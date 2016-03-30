@@ -1,6 +1,10 @@
 # holiday-app
 
-[holidayAPI](http://holidayapi.com/) + [AngularJS](https://angularjs.org/) version 0.0.1. - This web app generates a calendar with all holidays between selected date ranges.
+This web app generates a calendar with all holidays between selected date ranges using [holidayAPI](http://holidayapi.com/) + [AngularJS](https://angularjs.org/)
+
+## Demo
+
+[Demo here](http://www.iniapp.com/portfolio/holidayApp/) - version 0.0.1.
 
 ## Build & development
 
