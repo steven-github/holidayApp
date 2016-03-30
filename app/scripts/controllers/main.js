@@ -25,6 +25,7 @@ angular.module('holidayAppApp')
             $scope.error = false;
 
             var momentjs = moment($scope.data.date, "MM/DD/YYYY");
+            $scope.data.year = momentjs.year();
 
             var date = new Date(momentjs.year(), momentjs.month(), momentjs.date());
             var formattedDate = moment(date).add($scope.data.days, 'days').format("MM/DD/YYYY");
@@ -35,7 +36,6 @@ angular.module('holidayAppApp')
 
             $scope.data.month = momentjs.month() + 1;
             $scope.data.day = momentjs.date();
-            $scope.data.year = momentjs.year();
 
             getHolidaysService.getHolidays($scope.data).then(function(data) {
                 try {
