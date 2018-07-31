@@ -2,7 +2,7 @@
 
 This web app generates a calendar with all holidays between selected date ranges using [holidayAPI](http://holidayapi.com/) + [AngularJS1](https://angularjs.org/)
 
-## Dependencies
+## Installing required npm
 
 Install `grunt-cli`, `bower` and `generator-karma`:
 ```
@@ -15,8 +15,6 @@ If you are planning on using Sass, you will need to first install Ruby and Compa
 ```
 gem install compass
 ```
-
-Run `grunt` for building and `grunt serve` for preview
 
 ## Demo
 
