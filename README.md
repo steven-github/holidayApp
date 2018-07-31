@@ -20,7 +20,7 @@ Run `grunt` for building and `grunt serve` for preview
 
 ## Demo
 
-[Demo here](http://www.iniapp.com/portfolio/holidayApp/) - version 0.0.1.
+[Demo here](https://steven-github.github.io/holidayApp/) - version 0.0.2.
 
 Important known issues: [holidayAPI](http://holidayapi.com/) doesn't have multiple years support, so web app is limited to display holidays of selected year only.
 

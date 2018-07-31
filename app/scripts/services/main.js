@@ -8,14 +8,14 @@
  * Factory in the holidayAppApp.
  */
 angular.module('holidayAppApp')
-    .factory('getHolidaysService', ['$http', '$q', function($http, $q) {
+    .factory('getHolidaysService', ['$http', '$q', function ($http, $q) {
 
         //var apiURL = "http://holidayapi.com/v1/holidays";
         var apiURL = 'https://holidayapi.com/v1/holidays?key=12ed68aa-eebb-4c0b-a37b-6d3202de35ef';
 
         return {
 
-            getHolidays: function(data) {
+            getHolidays: function (data) {
                 var defer = $q.defer();
 
                 // $http({
@@ -46,12 +46,12 @@ angular.module('holidayAppApp')
                         //previous: true
                     }
                 }).
-                then(function(response) {
-                    //console.log('response', response);
-                    defer.resolve(response);
-                }, function(error) {
-                    defer.reject(error);
-                });
+                    then(function (response) {
+                        //console.log('response', response);
+                        defer.resolve(response);
+                    }, function (error) {
+                        defer.reject(error);
+                    });
 
                 return defer.promise;
             }

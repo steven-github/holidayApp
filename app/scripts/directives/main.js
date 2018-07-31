@@ -7,10 +7,10 @@
  * # main
  */
 angular.module('holidayAppApp')
-    .directive('loadCalendar', [function() {
+    .directive('loadCalendar', [function () {
         return {
             restrict: 'A',
-            link: function(scope, iElement, iAttrs) {
+            link: function (scope, iElement, iAttrs) {
                 //console.log('scope', scope);
                 $(iElement).daterangepicker({
                     startDate: scope.data.date,
@@ -27,18 +27,18 @@ angular.module('holidayAppApp')
                         //days: 30
                     },
                     holidays: scope.data.holidays
-                }, function(start, end, label) {
+                }, function (start, end, label) {
                     console.log('predefined range: ', label);
                 }).trigger('click');
                 $('[data-toggle="tooltip"]').tooltip();
             }
         };
     }])
-    .directive('stopPropagation', [function() {
+    .directive('stopPropagation', [function () {
         return {
             restrict: 'A',
-            link: function(scope, iElement, iAttrs) {
-                iElement.find('.daterangepicker').on("click", function(e) {
+            link: function (scope, iElement, iAttrs) {
+                iElement.find('.daterangepicker').on("click", function (e) {
                     //e.stopPropagation();
                     //e.preventDefault();
                 });
