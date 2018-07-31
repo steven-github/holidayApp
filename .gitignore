@@ -5,3 +5,4 @@
 /bower_components
 *.pdf
 /.grunt
+/.grunt/grunt-gh-pages/gh-pages/src
