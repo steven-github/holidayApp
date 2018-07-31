@@ -59,6 +59,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
                     color: #fff!important;
                 }
             }
+            .start-date {
+                &:hover {
+                    cursor: default;
+                }
+            }
             .off {
                 background: #fff!important;
                 color: #eee!important;

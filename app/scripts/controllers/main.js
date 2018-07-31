@@ -32,7 +32,7 @@ angular.module('holidayAppApp')
 
             $scope.data.additional = formattedDate;
 
-            var momentjs = moment(formattedDate, "MM/DD/YYYY");
+            //var momentjs = moment(formattedDate, "MM/DD/YYYY");
 
             $scope.data.month = momentjs.month() + 1;
             $scope.data.day = momentjs.date();
@@ -40,8 +40,8 @@ angular.module('holidayAppApp')
             getHolidaysService.getHolidays($scope.data).then(function(data) {
                 try {
                     if (data && data.status == 200) {
-                        console.log('data', data);
-                        $scope.data.holidays = data.holidays;
+                        //console.log('data', data);
+                        $scope.data.holidays = data.data.holidays;
                         $timeout(function() {
                             $scope.loading = false;
                             $scope.loaded = true;

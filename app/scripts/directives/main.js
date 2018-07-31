@@ -11,7 +11,7 @@ angular.module('holidayAppApp')
         return {
             restrict: 'A',
             link: function(scope, iElement, iAttrs) {
-                console.log('scope', scope.data);
+                //console.log('scope', scope);
                 $(iElement).daterangepicker({
                     startDate: scope.data.date,
                     endDate: scope.data.additional,
